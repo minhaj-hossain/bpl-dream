@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { use } from 'react';
 import Banner from './banner/Banner';
 import Players from './players/Players';
 
-const Main = () => {
+const Main = ({ playersInfo }) => {
+
+    const info = use(playersInfo)
+
+
+
+
     return (
         <div className='container mx-auto space-y-10 mb-100'>
             <Banner />
-            <Players />
+            <Players info ={info} />
         </div>
     );
 };

@@ -1,0 +1,102 @@
+[
+    {
+        "playerName": "Virat Kohli",
+        "image": "https://via.placeholder.com/150",
+        "country": "India",
+        "rating": 95,
+        "value": "$2M",
+        "role": "Batsman",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm medium"
+    },
+    {
+        "playerName": "Babar Azam",
+        "image": "https://via.placeholder.com/150",
+        "country": "Pakistan",
+        "rating": 93,
+        "value": "$1.8M",
+        "role": "Batsman",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm offbreak"
+    },
+    {
+        "playerName": "Joe Root",
+        "image": "https://via.placeholder.com/150",
+        "country": "England",
+        "rating": 92,
+        "value": "$1.7M",
+        "role": "Batsman",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm offbreak"
+    },
+    {
+        "playerName": "Steve Smith",
+        "image": "https://via.placeholder.com/150",
+        "country": "Australia",
+        "rating": 94,
+        "value": "$1.9M",
+        "role": "Batsman",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm legbreak"
+    },
+    {
+        "playerName": "Kane Williamson",
+        "image": "https://via.placeholder.com/150",
+        "country": "New Zealand",
+        "rating": 91,
+        "value": "$1.6M",
+        "role": "Batsman",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm offbreak"
+    },
+    {
+        "playerName": "Shakib Al Hasan",
+        "image": "https://via.placeholder.com/150",
+        "country": "Bangladesh",
+        "rating": 90,
+        "value": "$1.5M",
+        "role": "All-rounder",
+        "battingStyle": "Left-hand bat",
+        "bowlingStyle": "Slow left-arm orthodox"
+    },
+    {
+        "playerName": "Ben Stokes",
+        "image": "https://via.placeholder.com/150",
+        "country": "England",
+        "rating": 91,
+        "value": "$1.7M",
+        "role": "All-rounder",
+        "battingStyle": "Left-hand bat",
+        "bowlingStyle": "Right-arm fast-medium"
+    },
+    {
+        "playerName": "Hardik Pandya",
+        "image": "https://via.placeholder.com/150",
+        "country": "India",
+        "rating": 88,
+        "value": "$1.6M",
+        "role": "All-rounder",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm fast-medium"
+    },
+    {
+        "playerName": "Rashid Khan",
+        "image": "https://via.placeholder.com/150",
+        "country": "Afghanistan",
+        "rating": 92,
+        "value": "$1.8M",
+        "role": "Bowler",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm legbreak googly"
+    },
+    {
+        "playerName": "Jasprit Bumrah",
+        "image": "https://via.placeholder.com/150",
+        "country": "India",
+        "rating": 94,
+        "value": "$2M",
+        "role": "Bowler",
+        "battingStyle": "Right-hand bat",
+        "bowlingStyle": "Right-arm fast"
+    }
+]
