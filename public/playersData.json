@@ -4,7 +4,7 @@
         "image": "https://via.placeholder.com/150",
         "country": "India",
         "rating": 95,
-        "value": "$2M",
+        "value": "1000",
         "role": "Batsman",
         "battingStyle": "Right-hand bat",
         "bowlingStyle": "Right-arm medium"
@@ -24,7 +24,7 @@
         "image": "https://via.placeholder.com/150",
         "country": "England",
         "rating": 92,
-        "value": "$1.7M",
+        "value": "2000",
         "role": "Batsman",
         "battingStyle": "Right-hand bat",
         "bowlingStyle": "Right-arm offbreak"

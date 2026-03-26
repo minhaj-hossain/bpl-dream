@@ -18,7 +18,6 @@ function App() {
 
   // const [data, setData] = useState([])
 
-
   useEffect(() => {
     // way 4 to fatch data 
     // fetch('/playersData.json')
@@ -27,23 +26,21 @@ function App() {
     //   .catch(e => console.log('error:', e))
 
 
-
-
   }, [])
+
+
+  const [coins, setCoins] = useState(50000)
 
 
   return (
 
-
     <>
-      <Navbar />
+      <Navbar coins = {coins} />
 
       <Suspense fallback={<h3>hello there...</h3>}>
 
-        <Main playersInfo={fatchData} />
+        <Main setCoins={setCoins} playersInfo={fatchData} />
       </Suspense>
-
-
 
     </>
   )
