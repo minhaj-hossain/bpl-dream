@@ -1,7 +1,8 @@
+import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Main from './components/main/Main'
 import Navbar from './components/navbar/Navbar'
-import { Suspense, use, useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 // way 1 to fatch data
 // const playerData = async () => {
@@ -12,7 +13,6 @@ import { Suspense, use, useEffect, useState } from 'react'
 // way 2 to fatch data
 const fatchData = fetch('/playersData.json')
   .then(res => res.json())
-
 
 function App() {
 
@@ -25,9 +25,7 @@ function App() {
     //   .then(info => setData(prevData => [...prevData, info]))
     //   .catch(e => console.log('error:', e))
 
-
   }, [])
-
 
   const [coins, setCoins] = useState(50000)
 
@@ -36,12 +34,11 @@ function App() {
 
     <>
       <Navbar coins = {coins} />
-
       <Suspense fallback={<h3>hello there...</h3>}>
-
-        <Main setCoins={setCoins} playersInfo={fatchData} />
+        <Main coins={coins} setCoins={setCoins} playersInfo={fatchData} />
       </Suspense>
 
+      <ToastContainer />
     </>
   )
 }

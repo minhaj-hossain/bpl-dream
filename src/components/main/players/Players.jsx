@@ -1,7 +1,7 @@
 import React, { use, useState } from 'react';
 import Card from '../../ui/Card';
 
-const Players = ({ info, setCoins }) => {
+const Players = ({ info,coins,  setCoins }) => {
 
     const [btnData, setBtnData] = useState('Available')
     const [selectedPlayers, setSelectedPlayers] = useState([])
@@ -37,6 +37,7 @@ const Players = ({ info, setCoins }) => {
                 {
                     btnData == 'Available' &&
                     info.map(player => <Card 
+                        coins={coins}
                         setCoins={setCoins}
                         selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} key={player.playerName} player={player} />)
                 }

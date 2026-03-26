@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import { CiFlag1 } from 'react-icons/ci';
 import { FaUserAlt } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
-const Card = ({ player, selectedPlayers, setSelectedPlayers, setCoins }) => {
+const Card = ({ player, selectedPlayers, setSelectedPlayers, coins, setCoins }) => {
 
     const { playerName, country, rating, value, role, battingStyle } = player;
-
-
+    
     const isExist = selectedPlayers.find(p => p.playerName === player.playerName);
 
     const hangleSelection = () => {
 
-
-        if (!isExist) {
+        if (!isExist && coins > value) {
             setSelectedPlayers(prevPlayers => [...prevPlayers, player]
             )
+            toast("You've selected!")
         }
 
-        setCoins(prevCoins => prevCoins - value)
+        if (coins > value) {
+            setCoins(prevCoins => prevCoins - value)
+        }else {
+            toast("You can't select!")
+        }
     }
-
-   
-
 
     return (
         <div className='p-6 border border-[rgba(19,19,19,0.1)] rounded-xl'>
@@ -62,7 +63,7 @@ const Card = ({ player, selectedPlayers, setSelectedPlayers, setCoins }) => {
                     <button
                         onClick={hangleSelection}
                         className='btn'
-                        disabled={isExist}>{isExist ? 'Selected': 'Select player'}</button>
+                        disabled={isExist}>{isExist ? 'Selected' : 'Select player'}</button>
                 </div>
             </div>
 
