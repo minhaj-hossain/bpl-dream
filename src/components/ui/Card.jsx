@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CiFlag1 } from 'react-icons/ci';
 import { FaUserAlt } from 'react-icons/fa';
+import { MdDeleteForever } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
-const Card = ({ player, selectedPlayers, setSelectedPlayers, coins, setCoins }) => {
+const Card = ({ player, selectedPlayers, setSelectedPlayers, coins, setCoins, selectedTab }) => {
 
     const { playerName, country, rating, value, role, battingStyle } = player;
-    
+
+
     const isExist = selectedPlayers.find(p => p.playerName === player.playerName);
 
     const hangleSelection = () => {
@@ -19,9 +21,16 @@ const Card = ({ player, selectedPlayers, setSelectedPlayers, coins, setCoins }) 
 
         if (coins > value) {
             setCoins(prevCoins => prevCoins - value)
-        }else {
+        } else {
             toast("You can't select!")
         }
+    }
+
+    const handleDelete = (player) => {
+
+        setSelectedPlayers(prevSelectedPlayer => prevSelectedPlayer.filter(e => e.playerName != player.playerName))
+
+        setCoins(prevCoins => Number(prevCoins) + Number(value))
     }
 
     return (
@@ -59,14 +68,22 @@ const Card = ({ player, selectedPlayers, setSelectedPlayers, coins, setCoins }) 
                     <p className='text-[rgba(19,19,19,0.7)]'>{battingStyle}</p>
                 </div>
                 <div className='flex justify-between items-center'>
-                    <h4 className='font-bold'>Price: {value}</h4>
+                    <h4 className='font-bold '>Price: {value}</h4>
+                    <div>
+
+                        {
+                            selectedTab && <MdDeleteForever 
+                            className='text-red-500 font-black text-3xl'
+                            onClick={() => handleDelete(player)} />
+                        }
+
+                    </div>
                     <button
                         onClick={hangleSelection}
                         className='btn'
                         disabled={isExist}>{isExist ? 'Selected' : 'Select player'}</button>
                 </div>
             </div>
-
         </div>
     );
 };

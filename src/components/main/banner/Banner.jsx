@@ -1,5 +1,6 @@
 import React from 'react';
 import bannerMain from '../../../assets/images/banner-main.png'
+import Btn from '../../ui/Btn';
 
 const Banner = () => {
     return (
@@ -9,10 +10,10 @@ const Banner = () => {
 
                     <img className='' src={bannerMain} alt="banner main image" />
                 </div>
-                <div className='font-bold text-white'>
+                <div className=' flex flex-col items-center font-bold text-white'>
                     <h1 className='text-xl lg:text-3xl mb-4'>Assemble Your Ultimate Dream 11 Cricket Team</h1>
                     <p className='font-medium opacity-[0.7] mb-6'>Beyond Boundaries Beyond Limits</p>
-                    <button className='btn bg-[#e7fe29] text-[#131313]'>Claim Free Credit</button>
+                    <Btn textContent='Claim Free Credit' />
                 </div>
 
             </div>

@@ -1,20 +1,16 @@
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import Card from '../../ui/Card';
+import EmptySelected from '../../ui/EmptySelected';
 
-const Players = ({ info,coins,  setCoins }) => {
+const Players = ({ info, coins, setCoins, btnData, setBtnData }) => {
 
-    const [btnData, setBtnData] = useState('Available')
     const [selectedPlayers, setSelectedPlayers] = useState([])
-
-    console.log(selectedPlayers)
 
     const handleBtn = (btn) => {
         btn === 'Available' ? setBtnData('Available') :
             setBtnData('Selected')
 
     }
-
-
 
     return (
         <div className='space-y-8'>
@@ -36,23 +32,31 @@ const Players = ({ info,coins,  setCoins }) => {
 
                 {
                     btnData == 'Available' &&
-                    info.map(player => <Card 
+                    info.map(player => <Card
                         coins={coins}
                         setCoins={setCoins}
                         selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} key={player.playerName} player={player} />)
                 }
 
                 {
-                    btnData == 'Selected' &&
-                    selectedPlayers.map(player => <Card selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} 
-                    key={player.playerName} player={player} />)
+                    btnData == 'Selected' && selectedPlayers.length > 0 &&
+                    selectedPlayers.map(player => <Card
+                        selectedTab={true}
+                        setCoins={setCoins}
+                        selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers}
+                        key={player.playerName} player={player} />)
                 }
 
-
-
+                {
+                    btnData == 'Selected' && selectedPlayers.length == 0 &&
+                    <EmptySelected
+                        selectedTab={true}
+                    />
+                }
 
             </div>
-        </div>
+
+        </div >
     );
 };
 

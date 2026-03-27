@@ -4,14 +4,14 @@ import Main from './components/main/Main'
 import Navbar from './components/navbar/Navbar'
 import { Suspense, useEffect, useState } from 'react'
 
-// way 1 to fatch data
+// way 1 to fetch data
 // const playerData = async () => {
 //   const res = await fetch('/playersData.json')
 //   return res.json();
 // }
 
-// way 2 to fatch data
-const fatchData = fetch('/playersData.json')
+// way 2 to fetch data
+const fetchData = fetch('/playersData.json')
   .then(res => res.json())
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   // const [data, setData] = useState([])
 
   useEffect(() => {
-    // way 4 to fatch data 
+    // way 4 to fetch data 
     // fetch('/playersData.json')
     //   .then(res => res.json())
     //   .then(info => setData(prevData => [...prevData, info]))
@@ -35,7 +35,7 @@ function App() {
     <>
       <Navbar coins = {coins} />
       <Suspense fallback={<h3>hello there...</h3>}>
-        <Main coins={coins} setCoins={setCoins} playersInfo={fatchData} />
+        <Main coins={coins} setCoins={setCoins} playersInfo={fetchData} />
       </Suspense>
 
       <ToastContainer />
