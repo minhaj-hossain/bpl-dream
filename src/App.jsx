@@ -3,6 +3,7 @@ import './App.css'
 import Main from './components/main/Main'
 import Navbar from './components/navbar/Navbar'
 import { Suspense, useEffect, useState } from 'react'
+import Footer from './components/footer/Footer'
 
 // way 1 to fetch data
 // const playerData = async () => {
@@ -37,6 +38,8 @@ function App() {
       <Suspense fallback={<h3>hello there...</h3>}>
         <Main coins={coins} setCoins={setCoins} playersInfo={fetchData} />
       </Suspense>
+
+      <Footer/>
 
       <ToastContainer />
     </>
